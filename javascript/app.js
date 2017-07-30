@@ -1,7 +1,7 @@
 // var player1 = prompt("Votre nom");
 // var boss = "Nucleator ";
-var health = 20;
-var damage = Math.floor(Math.random(6) * 6+1); // générateur de dégats random (fonctionne)
+// var health = 20;
+// var damage = Math.floor(Math.random() * 6+1); // générateur de dégats random (fonctionne)
 
 
 
@@ -13,39 +13,46 @@ var player1 = {
 }
 
 var boss = {
-    name: "Nucleator",
+    name: "Nucleator ",
     health: 20,
 
 }
 
 
 
-
 function runFigth (){
 
-	if (player1 > 0) {
+	if (player1.health > 0 && boss.health >= 0) {
 
-		player1.health();
-		boss.health();
+		player1.health;
+		boss.health;
 
-		damage.player1();
+
+		var damage = Math.floor(Math.random() * 6+1);
+		damage.player1;
 		boss.health -= damage;
 
-		damage.boss();
+		prompt("tu infliges " + damage + " points de dégats" +" il reste " + boss.health + " points de vie " + " à " + boss.name + "!");
+
+
+		var damage = Math.floor(Math.random() * 6+1);
+		damage.boss;
 		player1.health -= damage;
+
+		prompt( boss.name + "inflige " + damage + " points de dégats" + " il reste " + player1.health + " points de vie" + " à " + player1.name + "!");
 
 	
 
 			if (player1.health <= 0){
 
-				console.log("You are dead " + boss + ( "is the winner !"))
+				prompt("You are dead " + boss.name + ( "is the winner !"));
 				return true; 
 
 			}
 
 			if (boss.health <= 0){
 
-				console.log("Congratulation " + boss + ( "is dead you save the world !"))
+				prompt("Congratulation " + boss.name + ( "is dead you save the world !"));
 				return true; 
 
 			}
@@ -56,13 +63,13 @@ function runFigth (){
 
 }
 
-function combatRound(){
+function timeToFigth(){
     var gameOver = runFigth(); 
 
     if(gameOver === false){
 
-        setTimeout(combatRound, 1000);
+        setTimeout(timeToFigth, 1000);
     }
 }
 
-combatRound();
+timeToFigth();

@@ -1,42 +1,68 @@
-var player1 = prompt("Votre nom");
-var boss;
+// var player1 = prompt("Votre nom");
+// var boss = "Nucleator ";
 var health = 20;
-var damage = math.floor(math.random(6));
-
-
-function runFigth (player1, boss){
+var damage = Math.floor(Math.random(6) * 6+1); // générateur de dégats random (fonctionne)
 
 
 
+
+var player1 = {
+    name: prompt("Votre nom"),
+    health: 20,
+
+}
+
+var boss = {
+    name: "Nucleator",
+    health: 20,
 
 }
 
 
-// function addition (str1, str2) {
-
-// var result;
-
-// result = "le resultat de ton addition est de " + (str1 + str2);
-
-// return alert(result);
-
-// }
-
-// var chiffre1 = Number (prompt("Coucou donne moi ton premier chiffre a additionner"));
-// var chiffre2 = Number (prompt("donne moi ton deuxieme chiffre a additionner"));
-// var sommeAdd2 = addition ( chiffre1, chiffre2);
 
 
-// function multiplication (str3, str4) {
+function runFigth (){
 
-// var result;
+	if (player1 > 0) {
 
-// result = "Pouf le resultat de ta multiplication est de " + str3 * str4 + " essaye de faire mieux";
+		player1.health();
+		boss.health();
 
-// return alert(result);
+		damage.player1();
+		boss.health -= damage;
 
-// }
+		damage.boss();
+		player1.health -= damage;
 
-// var chiffre3 = Number (prompt("Je sais en faire d'autre, donne moi ton premier chiffre a multiplier"));
-// var chiffre4 = Number (prompt("et maintenant ton multiplieur"));
-// var Multi3 = multiplication ( chiffre3, chiffre4);
+	
+
+			if (player1.health <= 0){
+
+				console.log("You are dead " + boss + ( "is the winner !"))
+				return true; 
+
+			}
+
+			if (boss.health <= 0){
+
+				console.log("Congratulation " + boss + ( "is dead you save the world !"))
+				return true; 
+
+			}
+
+		return false;
+
+	}
+
+}
+
+function combatRound(){
+    var gameOver = runFigth(); 
+
+    if(gameOver === false){
+
+        setTimeout(combatRound, 1000);
+    }
+}
+
+combatRound();

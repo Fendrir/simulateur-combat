@@ -36,6 +36,14 @@ function runFigth (){
 		alert("tu infliges " + damage + " points de dégats" +" il reste " + boss.health + " points de vie " + " à " + boss.name + "!");
 
 
+			if (boss.health <= 0){
+
+				// $('#combat-zone').append("<p>" + "Congratulation " + boss.name + "is dead you save the world !" + "</p>");
+				alert("Congratulation " + boss.name + "is dead you save the world !");
+				return true; 
+
+			}
+
 		var damage = Math.floor(Math.random() * 6+1);
 		damage.boss;
 		player1.health -= damage;
@@ -53,13 +61,7 @@ function runFigth (){
 
 			}
 
-			if (boss.health <= 0){
 
-				// $('#combat-zone').append("<p>" + "Congratulation " + boss.name + "is dead you save the world !" + "</p>");
-				alert("Congratulation " + boss.name + "is dead you save the world !");
-				return true; 
-
-			}
 
 		return false;
 

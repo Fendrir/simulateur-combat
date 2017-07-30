@@ -32,27 +32,27 @@ function runFigth (){
 		damage.player1;
 		boss.health -= damage;
 
-		prompt("tu infliges " + damage + " points de dégats" +" il reste " + boss.health + " points de vie " + " à " + boss.name + "!");
+		alert("tu infliges " + damage + " points de dégats" +" il reste " + boss.health + " points de vie " + " à " + boss.name + "!");
 
 
 		var damage = Math.floor(Math.random() * 6+1);
 		damage.boss;
 		player1.health -= damage;
 
-		prompt( boss.name + "inflige " + damage + " points de dégats" + " il reste " + player1.health + " points de vie" + " à " + player1.name + "!");
+		alert( boss.name + "inflige " + damage + " points de dégats" + " il reste " + player1.health + " points de vie" + " à " + player1.name + "!");
 
 	
 
 			if (player1.health <= 0){
 
-				prompt("You are dead " + boss.name + ( "is the winner !"));
+				alert("You are dead " + boss.name + ( "is the winner !"));
 				return true; 
 
 			}
 
 			if (boss.health <= 0){
 
-				prompt("Congratulation " + boss.name + ( "is dead you save the world !"));
+				alert("Congratulation " + boss.name + ( "is dead you save the world !"));
 				return true; 
 
 			}
